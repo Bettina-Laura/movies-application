@@ -4,35 +4,10 @@ const $ = require('jquery');
 
 const loader = require('./page-load.js');
 const {getMovies} = require('./api.js')
-// const movieButton= document.getElementById('movieButton');
-const title = document.getElementById('newMovie');
-const rating = document.getElementById('rateForm');
+// const title = document.getElementById('newMovie');
+/*const rating = document.getElementById('rateForm');*/
 
 let movieTitles = document.getElementById("movie-title");
-
-//-----------_--_-_-__-Allow users to add new movies
-$('#movieButton').click((e) => {
-    e.preventDefault();
-    const newestMovie = {title: title.val(), rating: rating.val()};
-    const url = '/api/movies/';
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newestMovie),
-    };
-    fetch(url, options)
-        .then( () => updatePage())
-        .catch((error) => {
-            alert('Oh no! Something went wrong.\nCheck the console for details.');
-            console.log(error);
-
-        });
-});
-
-updatePage();
-
 
 function updatePage() {
     getMovies().then((movies) => {
@@ -54,7 +29,29 @@ function updatePage() {
         });
 }
 
+//-----------_--_-_-__-Allow users to add new movies
 
+$("#movieButton").click((e) => {
+    e.preventDefault();
+    const newestMovie = {title: $('#newMovie').val(), rating: $('#rateForm').val()};
+    const url = '/api/movies/';
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newestMovie),
+    };
+    fetch(url, options)
+        .then( () => updatePage())
+        .catch((error) => {
+            alert('Oh no! Something went wrong.\nCheck the console for details.');
+            console.log(error);
+
+        });
+});
+
+updatePage();
 
 
 
