@@ -32,7 +32,7 @@
 <form>
     <label class="addTitle" for="rateForm">Rate the Movie</label>
     <select class="col-2" id="rateForm">
-        <option value="">Rating</option>
+        <option value="">How Many Stars?</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -40,8 +40,26 @@
         <option value="5">5</option>
     </select>
     <input id="newMovie"  class="form-control col-4" type="text" placeholder="Add a Movie">
-    <button id="movieButton" class="btn-primary col-2">Submit</button>
+    <button id="movieButton" class="btn-primary col-2">Add Movie</button>
+    <!--<button id="editMovie" class=btn-primary">Edit</button>-->
 </form>
+
+<form>
+    <label class="editTitle" for="editForm">Change Movie Rating</label>
+    <select class="col-2" id="editForm">
+        <option value="">New Rating!</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input id="editMovie"  class="form-control col-4" type="text" placeholder="Edit Movie Title">
+    <button id="editButton" class="btn-primary col-2">Edit Movie</button>
+    <input id="movieID" type="text" placeholder="Enter # to Complete Edit">
+</form>    
+    
+    
 
 
 <div id="movies" class="row"></div>

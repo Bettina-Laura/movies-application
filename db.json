@@ -1,36 +1,23 @@
 {
   "movies": [
     {
-      "title": "Casablanca",
-      "rating": "4",
-      "id": 1
-    },
-    {
-      "title": "Star Wars: A New Hope",
+      "title": "All Over Me",
       "rating": "5",
-      "id": 2
-    },
-    {
-      "title": "test",
-      "rating": "4",
-      "id": 3
-    },
-    {
       "id": 4
     },
     {
-      "title": "new movie",
+      "title": "Nemo",
       "rating": "4",
       "id": 5
     },
     {
-      "title": "new movie",
-      "rating": "4",
+      "title": "Hook",
+      "rating": "5",
       "id": 6
     },
     {
-      "title": "new movie",
-      "rating": "4",
+      "title": "Whats Eating Gilbert Grape",
+      "rating": "3",
       "id": 7
     },
     {
@@ -41,6 +28,11 @@
       "title": "The X Files",
       "rating": "5",
       "id": 9
+    },
+    {
+      "title": "Good Willing Hunting",
+      "rating": "4",
+      "id": 10
     }
   ]
 }
