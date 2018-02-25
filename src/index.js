@@ -3,37 +3,92 @@ const bootstrap = require('bootstrap');
 const $ = require('jquery');
 
 const loader = require('./page-load.js');
-const  addMoviesHere = require('./add-movie.js');
-const {getMovies} = require('./api.js');
+const {getMovies} = require('./api.js')
+
+// let id;
 
 let movieTitles = document.getElementById("movie-title");
 
-getMovies().then((movies) => {
-    addMoviesHere.addNewMovie();
-    addMoviesHere.renderMovie();
-    addMoviesHere.renderMovies();
-    addMoviesHere.updateMovies();
-    addMoviesHere.interactiveKey();
-
-    loader.showPage();
-    console.log('Here are all the movies:');
-    console.log(addNewMovie);
-
-    movies.forEach(({title, rating}) => {
-        // console.log(`id#${id} - ${title} - rating: ${rating}`);
-        movieTitles.innerHTML +=
-            `
-            <div>
-             ${title} - rating: ${rating} 
+function updatePage() {
+    getMovies().then((movies) => {
+        loader.showPage();
+        console.log('Movies displaying on HTML');
+        movieTitles.innerHTML = ('');
+        movies.forEach(({title, rating, id}) => {
+            movieTitles.innerHTML +=
+                `
+            <div id="movieDisplay" class="col-6">
+             ${id}. ${title} - Rating: ${rating} <button id="del-btn-${id}" type="button" class="btn-danger col-1">X</button>
              </div>
             `;
+        });
+
+        $('.btn-danger').click((e) => {
+            e.preventDefault();
+            let id = event.currentTarget.id.split('-');
+            removeMovie(id[2]);
+            $('#movieTitle' + id[2]).hide();
+            updatePage();
+        });
+
     })
-})
-    .catch((error) => {
-    alert('Oh no! Something went wrong.\nCheck the console for details.');
-    console.log(error);
+        .catch((error) => {
+            alert('Oh no! Something went wrong.');
+            console.log(error);
+        });
+}
+
+//-----------_--_-_-__-Allow users to add new movies
+
+$("#movieButton").click((e) => {
+    e.preventDefault();
+    const newestMovie = {title: $('#newMovie').val(), rating: $('#rateForm').val()};
+    const url = '/api/movies/';
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newestMovie),
+    };
+    fetch(url, options)
+        .then( () => updatePage())
+        .catch((error) => {
+            alert('Oh no! Something went wrong.');
+            console.log(error);
+
+        });
 });
-// {addNewMovie, renderMovie, renderMovies, updateMovies, interactiveKey}
+
+//=================================Allow users to EDIT a movie
+
+$("#editButton").click((e) => {
+    e.preventDefault();
+    const changeMovie = {title: $('#editMovie').val(), rating: $('#editForm').val(), id: $('#movieID').val()};
+    const url = '/api/movies/' + $('#movieID').val();
+    const options = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(changeMovie),
+    };
+    fetch(url, options)
+        .then(updatePage);
+});
+
+//====+==+========+=+=============+=+==+==DELETE A MOVIE
+
+function removeMovie(id) {
+         const options = {
+             method: 'DELETE',
+};
+    fetch(`/api/movies/${id}`, options)
+        .then(response => response.json())
+        .catch(error => console.log(error))
+
+}
 
 
+updatePage();
 
