@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 <body style="margin:0;">
-
-  <div class="container">
+<div class="container">
     <h1 class="text-center">Movies-Application</h1>
     <div class="row my-5">
       <div class="col-sm-6 offset-sm-3">
@@ -17,53 +16,40 @@
                 data-toggle="popover"
                 title="Popover title"
                 data-content="And here's some amazing content. It's very engaging. Right?">
-          Here's a Bootstrap Popover
+
         </button>
       </div>
     </div>
-  </div>
+
   <!--movie input-->
 <div>
-    <p id="movie-title"></p>
+    <p id="movie-title" class="row"></p>
 </div>
   <!--loading ring-->
-<div id="loader"></div>
+<div class="offset-5" id="loader"></div>
 
 <!--add movie form-->
 <form>
-    <label class="addTitle" for="rate-Form">Rate the Movie</label>
-
-    <select id="rate-Form" class="form-control" onchange="interactiveKey()">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-    <input id="new-movie"  class="form-control" onkeyup="interactiveKey()" type="text" placeholder="Add a Movie">
-    <input id="make-movie" type="submit" class="btn-block">
+    <label class="addTitle" for="rateForm">Rate the Movie</label>
+    <!--<select class="col-2" id="rate-Form">-->
+        <!--<option value="">Rating</option>-->
+        <!--<option value="1">1</option>-->
+        <!--<option value="2">2</option>-->
+        <!--<option value="3">3</option>-->
+        <!--<option value="4">4</option>-->
+        <!--<option value="5">5</option>-->
+    <!--</select>-->
+    <input id="rateForm"  class="form-control col-4" type="text" placeholder="Rate Movie 1-5">
+    <input id="newMovie"  class="form-control col-4" type="text" placeholder="Add a Movie">
+    <button id=movieButton" class="btn-primary col-2">Submit</button>
 </form>
 
 
+<div id="movies" class="row"></div>
 
 
 
-<div id="movies"></div>
-
-
-<!--<script>-->
-    <!--var myVar;-->
-
-    <!--function myFunction() {-->
-        <!--myVar = setTimeout(showPage, 3000);-->
-    <!--}-->
-
-    <!--function showPage() {-->
-        <!--document.getElementById("loader").style.display = "none";-->
-        <!--document.getElementById("movie-title").style.display = "block";-->
-    <!--}-->
-<!--</script>-->
-
+</div>
 <script src="/main.js"></script>
 </body>
 </html>
