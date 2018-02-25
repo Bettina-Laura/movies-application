@@ -10,11 +10,25 @@
 <div class="container">
     <h1 class="text-center">Movies-Application</h1>
 
-<div>
-    <p id="movie-title" class="row"></p>
-</div>
-  <!--loading ring-->
-<div class="offset-5" id="loader"></div>
+    <!--loading ring-->
+    <div class="offset-5" id="loader"></div>
+
+    <table id="movieDisplay" class="table-bordered">
+        <thead class="container">
+        <tr>
+            <th>Reference ID</th>
+            <th>Movie Title</th>
+            <th>Movie Rating</th>
+            <th>Remove Movie</th>
+        </tr>
+        </thead>
+
+    <tbody id="movie-title"></tbody>
+
+    </table>
+
+
+
 
 <!--add movie form-->
 <form>
@@ -29,7 +43,6 @@
     </select>
     <input id="newMovie"  class="form-control col-4" type="text" placeholder="Add a Movie">
     <button id="movieButton" class="btn-primary col-2">Add Movie</button>
-    <!--<button id="editMovie" class=btn-primary">Edit</button>-->
 </form>
 
 <form>
