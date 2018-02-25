@@ -4,9 +4,8 @@ const $ = require('jquery');
 
 const loader = require('./page-load.js');
 const {getMovies} = require('./api.js')
-// let id = document.getElementById('movieID');
-/*const rating = document.getElementById('rateForm');*/
-let id;
+
+// let id;
 
 let movieTitles = document.getElementById("movie-title");
 
@@ -22,25 +21,19 @@ function updatePage() {
              ${id}. ${title} - Rating: ${rating} <button id="del-btn-${id}" type="button" class="btn-danger col-1">X</button>
              </div>
             `;
-            // movieTitles.innerHTML +=
-            //     `
-            //     <button id="deleteButton-${id}" class="btn-primary col-2">Delete</button>
-            //     `
         });
 
         $('.btn-danger').click((e) => {
+            e.preventDefault();
             let id = event.currentTarget.id.split('-');
             removeMovie(id[2]);
-            $('' + id[2]).hide();
+            $('#movieTitle' + id[2]).hide();
+            updatePage();
         });
 
-        // $("#deleteButton").click(() => {
-        //     // e.target.value;
-        //     removeMovie();
-        // })
     })
         .catch((error) => {
-            alert('Oh no! Something went wrong.\nCheck the console for details.');
+            alert('Oh no! Something went wrong.');
             console.log(error);
         });
 }
@@ -95,13 +88,7 @@ function removeMovie(id) {
         .catch(error => console.log(error))
 
 }
-//
-// delMovies: (id) => {
-//     options.method = "DELETE";
-//     return fetch(`/api/movies/${id}`, options)
-//         .then(response => response.json())
-//         .catch(error => console.log(error))
-// },
+
 
 updatePage();
 

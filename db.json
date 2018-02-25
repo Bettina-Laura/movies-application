@@ -1,38 +1,19 @@
 {
   "movies": [
     {
-      "title": "All Over Me",
-      "rating": "5",
-      "id": 4
-    },
-    {
-      "title": "Nemo",
-      "rating": "4",
-      "id": 5
-    },
-    {
-      "title": "Hook",
-      "rating": "5",
-      "id": 6
-    },
-    {
-      "title": "Whats Eating Gilbert Grape",
+      "title": "Friends",
       "rating": "3",
-      "id": 7
+      "id": 1
     },
     {
       "title": "Top Gun",
-      "id": 8
-    },
-    {
-      "title": "The X Files",
-      "rating": "5",
-      "id": 9
-    },
-    {
-      "title": "Good Willing Hunting",
       "rating": "4",
-      "id": 10
+      "id": 2
+    },
+    {
+      "title": "Finding Nemo",
+      "rating": "5",
+      "id": 3
     }
   ]
 }
