@@ -17,7 +17,7 @@ function updatePage() {
         movies.forEach(({title, rating, id}) => {
             movieTitles.innerHTML +=
                 `
-            <div id="movieDisplay">
+            <div id="movieDisplay" class="col-6">
              ${id}. ${title} - Rating: ${rating} <button id="del-btn-${id}" type="button" class="btn-danger col-1">X</button>
              </div>
             `;
@@ -54,7 +54,7 @@ $("#movieButton").click((e) => {
     fetch(url, options)
         .then( () => updatePage())
         .catch((error) => {
-            alert('Oh no! Something went wrong.\nCheck the console for details.');
+            alert('Oh no! Something went wrong.');
             console.log(error);
 
         });
@@ -91,5 +91,4 @@ function removeMovie(id) {
 
 
 updatePage();
-
 

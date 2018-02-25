@@ -1,19 +1,14 @@
 {
   "movies": [
     {
-      "title": "Friends",
-      "rating": "3",
+      "title": "Finding Nemo",
+      "rating": "4",
       "id": 1
     },
     {
-      "title": "Top Gun",
-      "rating": "4",
-      "id": 2
-    },
-    {
-      "title": "Finding Nemo",
+      "title": "Jaws",
       "rating": "5",
-      "id": 3
+      "id": 2
     }
   ]
 }
