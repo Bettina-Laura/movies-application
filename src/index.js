@@ -5,7 +5,6 @@ const $ = require('jquery');
 const loader = require('./page-load.js');
 const {getMovies} = require('./api.js')
 
-// let id;
 
 let movieTitles = document.getElementById("movie-title");
 
@@ -18,7 +17,7 @@ function updatePage() {
             movieTitles.innerHTML +=
                 `
             <div id="movieDisplay" class="col-6">
-             ${id}. ${title} - Rating: ${rating} <button id="del-btn-${id}" type="button" class="btn-danger col-1">X</button>
+             ${id}. ${title} - Rating: ${rating} <button id="del-btn-${id}" type="button" class="btn-danger col-2">Delete</button><hr>
              </div>
             `;
         });

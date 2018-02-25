@@ -1,11 +1,6 @@
 {
   "movies": [
     {
-      "title": "Finding Nemo",
-      "rating": "4",
-      "id": 1
-    },
-    {
       "title": "Jaws",
       "rating": "5",
       "id": 2
