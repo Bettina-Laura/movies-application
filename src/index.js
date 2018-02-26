@@ -15,12 +15,13 @@ function updatePage() {
         movieTitles.innerHTML = ("");
 
 
-        movies.forEach(({title, rating, id}) => {
+        movies.forEach(({title, rating, id, genre}) => {
             movieTitles.innerHTML +=
                 `
           <tr> 
             <td>${id}</td> 
             <td>${title}</td> 
+            <td>${genre}</td>
             <td>${rating}</td> 
             <td><button id="del-btn-${id}" type="button" class="btn-danger">Delete</button></td>
           </tr>
@@ -47,7 +48,7 @@ function updatePage() {
 
 $("#movieButton").click((e) => {
     e.preventDefault();
-    const newestMovie = {title: $('#newMovie').val(), rating: $('#rateForm').val()};
+    const newestMovie = {title: $('#newMovie').val(), rating: $('#rateForm').val(), genre: $('#newGenre').val()};
     const url = '/api/movies/';
     const options = {
         method: 'POST',
@@ -69,7 +70,7 @@ $("#movieButton").click((e) => {
 
 $("#editButton").click((e) => {
     e.preventDefault();
-    const changeMovie = {title: $('#editMovie').val(), rating: $('#editForm').val(), id: $('#movieID').val()};
+    const changeMovie = {title: $('#editMovie').val(), rating: $('#editForm').val(), id: $('#movieID').val(), genre: $('#editGenre').val()};
     const url = '/api/movies/' + $('#movieID').val();
     const options = {
         method: 'PUT',
