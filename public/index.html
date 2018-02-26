@@ -6,15 +6,58 @@
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
-<body style="display: inline;">
+<body>
 <div class="container">
     <h1 class="text-center">Movies-Application</h1>
 
+
+    <div class="hidden-xs col-sm-12 col-md-12 col-lg-12"><hr></div>
+
+    <div class="row shift">
+
+        <!--add movie form-->
+        <div class="hxs-4 col-sm-4 col-md-4 col-lg-4">
+
+            <form>
+                <label class="addTitle" for="rateForm">Rate the Movie</label>
+                <select class="col-4" id="rateForm">
+                    <option value="">1-5</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <input id="newMovie"  class="form-control" type="text" placeholder="Add a Movie">
+                <button id="movieButton" class="btn-primary">Add Movie</button>
+            </form>
+
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4"><br></div>
+            <form>
+                <label class="editTitle" for="editForm">Change Movie Rating</label>
+                <select id="editForm">
+                    <option value="">New Rating!</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <input id="editMovie"  class="form-control" type="text" placeholder="Edit Movie Title">
+                <button id="editButton" class="btn-primary">Edit Movie</button>
+                <input id="movieID" type="text" class="col-7" placeholder="Enter Reference ID #">
+            </form>
+        </div>
+
+        <!--===============MOVIES DISPLAY=============-->
+
+<div class="sx-8 col-sm-8 col-md-8 col-lg-8">
     <!--loading ring-->
     <div class="offset-5" id="loader"></div>
 
-    <table id="movieDisplay" class="table table-fixed table-striped">
-        <thead>
+    <div class="scrollable">
+    <table id="movieDisplay" class="table table-bordered table-striped">
+        <thead id="tableHead">
         <tr>
             <th>Reference ID</th>
             <th>Movie Title</th>
@@ -22,44 +65,17 @@
             <th>Remove Movie</th>
         </tr>
         </thead>
+
     <tbody id="movie-title"></tbody>
 
     </table>
+    </div>
+</div>
 
 
 
-
-<!--add movie form-->
-<form>
-    <label class="addTitle" for="rateForm">Rate the Movie</label>
-    <select class="col-2" id="rateForm">
-        <option value="">How Many Stars?</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-    <input id="newMovie"  class="form-control col-4" type="text" placeholder="Add a Movie">
-    <button id="movieButton" class="btn-primary col-2">Add Movie</button>
-</form>
-
-<form>
-    <label class="editTitle" for="editForm">Change Movie Rating</label>
-    <select class="col-2" id="editForm">
-        <option value="">New Rating!</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-    <input id="editMovie"  class="form-control col-4" type="text" placeholder="Edit Movie Title">
-    <button id="editButton" class="btn-primary col-2">Edit Movie</button>
-    <input id="movieID" type="text" placeholder="Enter # to Complete Edit">
-</form>    
     
-
+</div>
 
 
 </div>
