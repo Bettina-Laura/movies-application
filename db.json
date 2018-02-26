@@ -11,24 +11,19 @@
       "id": 3
     },
     {
-      "title": "Finding Nemo",
-      "rating": "3",
+      "title": "Cool Runnings",
+      "rating": "5",
       "id": 4
     },
     {
-      "title": "Finding Nemo",
+      "title": "Aliens",
       "rating": "3",
       "id": 5
     },
     {
-      "title": "Finding Nemo",
+      "title": "Cheers",
       "rating": "3",
       "id": 6
-    },
-    {
-      "title": "Finding Nemo",
-      "rating": "3",
-      "id": 7
     },
     {
       "title": "Dreams",
@@ -39,6 +34,16 @@
       "title": "Titanic",
       "rating": "4",
       "id": 9
+    },
+    {
+      "title": "Good Will Hunting",
+      "rating": "4",
+      "id": 10
+    },
+    {
+      "title": "Lion King",
+      "rating": "5",
+      "id": 11
     }
   ]
 }
