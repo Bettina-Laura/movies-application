@@ -31,9 +31,14 @@
       "id": 7
     },
     {
-      "title": "Deams",
-      "rating": "2",
+      "title": "Dreams",
+      "rating": "3",
       "id": 8
+    },
+    {
+      "title": "Titanic",
+      "rating": "4",
+      "id": 9
     }
   ]
 }
