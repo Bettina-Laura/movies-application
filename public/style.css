@@ -1,3 +1,5 @@
+
+
 html, body {
     height: 100%;
 }
@@ -23,3 +25,21 @@ html, body {
     font-family: "Comic Sans MS";
 
 }
+
+
+
+.scroll {
+    overflow-y: auto;
+    height: 100px;
+    width: 100%;
+
+}
+
+
+.table-fixed {
+    width:100%;
+}
+
+
+
+

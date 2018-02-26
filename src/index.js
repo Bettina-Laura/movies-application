@@ -12,25 +12,21 @@ function updatePage() {
     getMovies().then((movies) => {
         loader.showPage();
         console.log('Movies displaying on HTML');
-        movieTitles.innerHTML = ('')
+        movieTitles.innerHTML = ("");
+
 
         movies.forEach(({title, rating, id}) => {
             movieTitles.innerHTML +=
                 `
-         
-            
-            <tbody>
-            <tr class="col-6">
-            <td class="col-6">${id}</td> 
-            <td class="col-6">${title}</td> 
-            <td class="col-6">${rating}</td> 
-            <td><button id="del-btn-${id}" type="button" class="btn-danger">Delete</button><hr></td>
-            </tr>
-            </tbody>
-             
-           
+          <tr> 
+            <td>${id}</td> 
+            <td>${title}</td> 
+            <td>${rating}</td> 
+            <td><button id="del-btn-${id}" type="button" class="btn-danger">Delete</button></td>
+          </tr>
             `;
         });
+
 
         $('.btn-danger').click((e) => {
             e.preventDefault();
