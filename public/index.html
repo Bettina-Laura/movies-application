@@ -8,8 +8,17 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="text-center">Movies-Application</h1>
 
+
+    <!--header-->
+    <div class="jumbotron">
+        <h1>Movies Application</h1>
+    </div>
+
+
+
+
+    <!--content-->
 
     <div class="hidden-xs col-sm-12 col-md-12 col-lg-12"><hr></div>
 
@@ -29,8 +38,11 @@
                     <option value="5">5</option>
                 </select>
                 <input id="newMovie"  class="form-control" type="text" placeholder="Add a Movie">
+                <input id="newGenre" class="form-control" type="text" placeholder="Insert Genre">
                 <button id="movieButton" class="btn-primary">Add Movie</button>
             </form>
+
+            <!--edit movie form-->
 
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4"><br></div>
             <form>
@@ -44,6 +56,7 @@
                     <option value="5">5</option>
                 </select>
                 <input id="editMovie"  class="form-control" type="text" placeholder="Edit Movie Title">
+                <input id="editGenre" class="form-control" type="text" placeholder="Edit Genre">
                 <button id="editButton" class="btn-primary">Edit Movie</button>
                 <input id="movieID" type="text" class="col-7" placeholder="Enter Reference ID #">
             </form>
@@ -61,6 +74,7 @@
         <tr>
             <th>Reference ID</th>
             <th>Movie Title</th>
+            <th>Genre</th>
             <th>Movie Rating</th>
             <th>Remove Movie</th>
         </tr>
