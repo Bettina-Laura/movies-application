@@ -1,0 +1,15 @@
+body {
+    background-image: url("images/stage.jpg");
+    background-size: inherit;
+    font-family: 'Russo One', sans-serif;
+    box-sizing: border-box;
+}
+
+h1, h2, p {
+    color: white;
+    text-align: center;
+}
+
+img {
+    margin-left: 470px;
+}
