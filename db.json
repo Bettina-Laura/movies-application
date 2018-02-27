@@ -13,13 +13,15 @@
     },
     {
       "title": "Cool Runnings",
-      "rating": "5",
-      "id": 4
+      "rating": "4",
+      "id": 4,
+      "genre": "Comedy"
     },
     {
       "title": "Aliens",
-      "rating": "3",
-      "id": 5
+      "rating": "5",
+      "id": 5,
+      "genre": "Sci-Fi"
     },
     {
       "title": "Cheers",
@@ -51,6 +53,12 @@
       "rating": "4",
       "genre": "Action",
       "id": 12
+    },
+    {
+      "title": "Glitter",
+      "rating": "4",
+      "id": 13,
+      "genre": "Cult Classic"
     }
   ]
 }
